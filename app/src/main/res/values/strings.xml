@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VKCups Stage One</string>
+    <string name="text_label">Choose what you are interested in to customize Zen</string>
+
+    <!--Buttons-->
+    <string name="text_later">Later</string>
+    <string name="text_continue">Continue</string>
+
+    <!--Descriptions-->
+    <string name="desc_favorite_item">Category</string>
+
+    <!--Categories-->
+    <string name="category_humor">Humor</string>
+    <string name="category_food">Food</string>
+    <string name="category_cinema">Cinema</string>
+    <string name="category_restaurants">Restaurants</string>
+    <string name="category_walks">Walks</string>
+    <string name="category_policy">Policy</string>
+    <string name="category_news">News</string>
+    <string name="category_cars">Cars</string>
+    <string name="category_series">Series</string>
+    <string name="category_tattoos">Tattoos</string>
+    <string name="category_recipes">Recipes</string>
+    <string name="category_job">Job</string>
+    <string name="category_rest">Rest</string>
+    <string name="category_sports">Sports</string>
+    <string name="category_nature">Nature</string>
+    <string name="category_animals">Animals</string>
+    <string name="category_celebrities">Celebrities</string>
+    <string name="category_music">Music</string>
+    <string name="category_paintings">Paintings</string>
+    <string name="category_dance">Dance</string>
+    <string name="category_skateboarding">Skateboarding</string>
+    <string name="category_swimming">Swimming</string>
+    <string name="category_running">Running</string>
+</resources>

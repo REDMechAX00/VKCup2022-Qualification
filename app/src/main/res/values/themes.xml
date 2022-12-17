@@ -1,0 +1,35 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.VKCupsFirstStage" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_back_primary</item>
+        <item name="colorPrimaryVariant">@color/color_back_primary</item>
+        <item name="colorOnPrimary">@color/color_label_primary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_back_secondary</item>
+        <item name="colorOnSecondary">@color/color_label_primary_black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- My themes. -->
+    <style name="primaryText">
+        <item name="android:textColor">@color/color_label_primary</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="primaryTextBlackBig">
+        <item name="android:textColor">@color/color_label_primary_black</item>
+        <item name="android:textSize">@dimen/text_size_high</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="secondaryText">
+        <item name="android:textColor">@color/color_label_secondary</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+</resources>

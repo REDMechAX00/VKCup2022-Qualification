@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_back_primary">
+
+    <LinearLayout
+        android:id="@+id/favorites_container_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_indents_big"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/app_indents_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/favorites_text_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/app_indents_big"
+            android:layout_weight="1"
+            android:text="@string/text_label"
+            android:textAppearance="@style/secondaryText" />
+
+        <android.widget.Button
+            android:id="@+id/favorites_btn_skip"
+            android:layout_width="@dimen/favorite_btn_top_width"
+            android:layout_height="@dimen/favorite_btn_top_height"
+            android:layout_weight="0"
+            android:background="@drawable/btn_favorite_top_new"
+            android:gravity="center"
+            android:paddingBottom="@dimen/correcting_padding_bottom"
+            android:text="@string/text_later"
+            android:textAppearance="@style/primaryText"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/app_indents_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/favorites_container_label">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/favorites_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutAnimation="@anim/favorites_layout_animation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/favorites_container_label" />
+
+            <View
+                android:id="@+id/favorites_recycler_view_filler"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/favorite_recycler_view_filler_height" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/favorites_btn_continue"
+        android:layout_width="@dimen/favorite_btn_bottom_width"
+        android:layout_height="@dimen/favorite_btn_bottom_height"
+        android:layout_marginBottom="@dimen/favorite_btn_bottom_padding_bottom"
+        android:gravity="center"
+        android:text="@string/text_continue"
+        android:textAppearance="@style/primaryTextBlackBig"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

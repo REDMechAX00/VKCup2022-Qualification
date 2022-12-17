@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VKCups Stage One</string>
+    <string name="text_label">Отметьте то, что вам интересно, чтобы настроить Дзен</string>
+
+    <!--Buttons-->
+    <string name="text_later">Позже</string>
+    <string name="text_continue">Продолжить</string>
+
+    <!--Descriptions-->
+    <string name="desc_favorite_item">Категория</string>
+
+    <!--Categories-->
+    <string name="category_humor">Юмор</string>
+    <string name="category_food">Еда</string>
+    <string name="category_cinema">Кино</string>
+    <string name="category_restaurants">Рестораны</string>
+    <string name="category_walks">Прогулки</string>
+    <string name="category_policy">Политика</string>
+    <string name="category_news">Новости</string>
+    <string name="category_cars">Автомобили</string>
+    <string name="category_series">Сериалы</string>
+    <string name="category_tattoos">Татуировки</string>
+    <string name="category_recipes">Рецепты</string>
+    <string name="category_job">Работа</string>
+    <string name="category_rest">Отдых</string>
+    <string name="category_sports">Спорт</string>
+    <string name="category_nature">Природа</string>
+    <string name="category_animals">Животные</string>
+    <string name="category_celebrities">Знаменитости</string>
+    <string name="category_music">Музыка</string>
+    <string name="category_paintings">Картины</string>
+    <string name="category_dance">Dance</string>
+    <string name="category_skateboarding">Skateboarding</string>
+    <string name="category_swimming">Swimming</string>
+    <string name="category_running">Running</string>
+</resources>

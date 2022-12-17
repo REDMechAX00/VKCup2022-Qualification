@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Support-->
+    <color name="separator">@color/color_gray</color>
+
+    <!--Label-->
+    <color name="color_label_primary">@color/color_white</color>
+    <color name="color_label_primary_black">@color/color_black</color>
+    <color name="color_label_secondary">@color/color_gray_light</color>
+
+    <!--Back-->
+    <color name="color_back_primary">@color/color_black</color>
+    <color name="color_back_secondary">@color/color_white</color>
+
+    <!--Buttons-->
+    <color name="color_btn_favorite_top">@color/color_gray_dark</color>
+    <color name="color_btn_favorite_bottom">@color/color_white</color>
+    <color name="color_btn_favorite_primary">@color/color_gray</color>
+    <color name="color_btn_favorite_secondary">@color/color_orange</color>
+    <color name="color_btn_favorite_on_secondary">@color/color_white</color>
+
+    <!--Colors-->
+    <color name="color_orange">#FF5317</color>
+    <color name="color_gray_light">#7AFFFFFF</color>
+    <color name="color_gray">#2BFFFFFF</color>
+    <color name="color_gray_dark">#1FFFFFFF</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="color_transparent">#00000000</color>
+
+    <color name="color_orange_alpha50">#80FF5317</color>
+    <color name="color_orange_alpha40">#66FF5317</color>
+    <color name="color_orange_alpha30">#4DFF5317</color>
+
+</resources>
