@@ -1,12 +1,12 @@
 package com.redmechax00.vkcup2022qualification.data.favorites
 
-data class FavoriteItem(
+data class FavoriteModel(
     val itemId: Int = 0,
     val itemText: String = "",
     var itemIsChecked: Boolean = false,
 ) {
     override fun equals(other: Any?): Boolean {
-        other as FavoriteItem
+        other as FavoriteModel
         if (itemId != other.itemId) return false
         if (itemText != other.itemText) return false
         return true

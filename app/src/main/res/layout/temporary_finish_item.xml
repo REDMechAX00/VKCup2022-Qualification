@@ -6,7 +6,7 @@
     android:padding="@dimen/app_indents_small">
 
     <ImageView
-        android:id="@+id/favorite_item_background"
+        android:id="@+id/temporary_finish_item_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/bg_favorite_item"
@@ -27,32 +27,16 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/favorite_item_text_title"
+            android:id="@+id/temporary_finish_item_text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/app_indents_small"
+            android:layout_marginEnd="@dimen/app_indents_small"
             android:gravity="center|start"
             android:text="@string/category_animals"
             android:textAppearance="@style/primaryText"
             android:textStyle="bold" />
-
-        <View
-            android:id="@+id/favorite_item_separator"
-            android:layout_width="@dimen/separator_width"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/app_indents_normal"
-            android:layout_marginEnd="@dimen/app_indents_small"
-            android:background="@color/separator" />
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/favorite_item_btn_add"
-            android:layout_width="@dimen/icon_size"
-            android:layout_height="@dimen/icon_size"
-            android:paddingBottom="@dimen/correcting_padding_bottom"
-            android:scaleX="3.2"
-            android:scaleY="3.2"
-            app:lottie_rawRes="@raw/icon_add" />
 
     </LinearLayout>
 

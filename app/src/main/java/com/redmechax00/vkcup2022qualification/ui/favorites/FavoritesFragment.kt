@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
@@ -14,11 +16,13 @@ import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-import com.redmechax00.vkcup2022qualification.data.favorites.FavoriteItem
+import com.redmechax00.vkcup2022qualification.data.favorites.FavoriteModel
 import com.redmechax00.vkcup2022qualification.databinding.FavoritesFragmentBinding
+import com.redmechax00.vkcup2022qualification.ui.temporary.TemporaryFinishFragment
+import com.redmechax00.vkcup2022qualification.utils.startFragment
 
 
-class FavoritesFragment : Fragment(), Contract.FavouritesView {
+class FavoritesFragment : Fragment(), Contract.FavoritesView {
 
     private lateinit var _binding: FavoritesFragmentBinding
     private val binding get() = _binding
@@ -30,6 +34,9 @@ class FavoritesFragment : Fragment(), Contract.FavouritesView {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: FavoritesAdapter
     private lateinit var recyclerViewFiller: View
+
+    //Button
+    private lateinit var btnSkip: Button
 
     //Fab
     private lateinit var fabContinue: ExtendedFloatingActionButton
@@ -48,11 +55,17 @@ class FavoritesFragment : Fragment(), Contract.FavouritesView {
         return v
     }
 
+    override fun onStart() {
+        super.onStart()
+        setOnClickListeners()
+    }
+
     override fun onPause() {
+        super.onPause()
         val lastScrollPosition =
             (recyclerView.layoutManager as FlexboxLayoutManager).findFirstCompletelyVisibleItemPosition()
         presenter.onPause(lastScrollPosition)
-        super.onPause()
+        removeOnClickListeners()
     }
 
     override fun getFavoritesLifecycleOwner(): LifecycleOwner = viewLifecycleOwner
@@ -63,6 +76,9 @@ class FavoritesFragment : Fragment(), Contract.FavouritesView {
         recyclerViewFiller = binding.favoritesRecyclerViewFiller
         adapter = FavoritesAdapter { item -> onItemClick(item) }
         tuneRecyclerView(lastScrollPosition)
+
+        //Button
+        btnSkip = binding.favoritesBtnSkip
 
         //Floating Button
         fabContinue = binding.favoritesBtnContinue
@@ -80,20 +96,28 @@ class FavoritesFragment : Fragment(), Contract.FavouritesView {
         (recyclerView.layoutManager as FlexboxLayoutManager).scrollToPosition(lastScrollPosition)
     }
 
-    override fun updateAdapter(newData: ArrayList<FavoriteItem>) {
+    private fun setOnClickListeners() {
+        btnSkip.setOnClickListener { presenter.onBtnSkipClick() }
+        fabContinue.setOnClickListener { presenter.onBtnContinueClick() }
+    }
+
+    override fun updateAdapter(newData: ArrayList<FavoriteModel>) {
         adapter.updateData(newData)
     }
 
-    private fun onItemClick(item: FavoriteItem) {
+    override fun startNextFragment(data: ArrayList<String>?) {
+        startFragment(requireActivity() as AppCompatActivity, TemporaryFinishFragment(), data, true)
+    }
+
+    private fun onItemClick(item: FavoriteModel) {
         presenter.onItemClick(item)
     }
 
     override fun showFabContinue(show: Boolean) {
-        if(show){
+        if (show) {
             recyclerViewFiller.visibility = View.VISIBLE
             fabContinue.show()
-        }
-        else{
+        } else {
             recyclerViewFiller.visibility = View.GONE
             fabContinue.hide()
         }
@@ -101,5 +125,10 @@ class FavoritesFragment : Fragment(), Contract.FavouritesView {
 
     override fun showToast(text: String) {
         Toast.makeText(requireContext(), text, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun removeOnClickListeners() {
+        btnSkip.setOnClickListener(null)
+        fabContinue.setOnClickListener(null)
     }
 }

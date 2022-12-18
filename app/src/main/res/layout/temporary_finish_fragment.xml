@@ -6,12 +6,27 @@
     android:background="@color/color_back_primary">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/temporary_finish_anim"
+        android:paddingTop="@dimen/finish_anim_padding_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/finish_anim_height"
+        app:layout_constraintBottom_toTopOf="@id/temporary_finish_recycler_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_rawRes="@raw/icon_add" />
+        app:lottie_rawRes="@raw/favorites_complete" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/temporary_finish_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/app_indents_big"
+        android:layout_marginEnd="@dimen/app_indents_big"
+        android:layout_marginBottom="@dimen/app_indents_big"
+        android:layoutAnimation="@anim/favorites_layout_animation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temporary_finish_anim" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

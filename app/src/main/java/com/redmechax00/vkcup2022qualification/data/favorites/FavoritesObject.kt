@@ -10,117 +10,117 @@ object FavoritesObject {
     private fun getUid(): Int = countId++
 
     fun getItems() = arrayListOf(
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_humor),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_food),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_cinema),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_restaurants),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_walks),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_policy),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_news),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_cars),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_series),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_tattoos),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_recipes),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_job),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_rest),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_sports),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_nature),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_animals),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_paintings),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_celebrities),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_music),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_dance),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_skateboarding),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_swimming),
             false
         ),
-        FavoriteItem(
+        FavoriteModel(
             getUid(),
             App.Strings.get(R.string.category_running),
             false

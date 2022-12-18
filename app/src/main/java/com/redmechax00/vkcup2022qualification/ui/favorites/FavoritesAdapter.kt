@@ -1,12 +1,9 @@
 package com.redmechax00.vkcup2022qualification.ui.favorites
 
 import android.animation.ValueAnimator
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.graphics.BlendModeColorFilterCompat
@@ -16,17 +13,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.redmechax00.vkcup2022qualification.App
 import com.redmechax00.vkcup2022qualification.R
-import com.redmechax00.vkcup2022qualification.data.favorites.FavoriteItem
+import com.redmechax00.vkcup2022qualification.data.favorites.FavoriteModel
 import com.redmechax00.vkcup2022qualification.utils.MyDiffUtilCallback
 
 
-class FavoritesAdapter(private val onItemClicked: (item: FavoriteItem) -> Unit) :
+class FavoritesAdapter(private val onItemClicked: (item: FavoriteModel) -> Unit) :
     RecyclerView.Adapter<FavoritesAdapter.FavoritesHolder>() {
 
-    private val data: AsyncListDiffer<FavoriteItem> =
+    private val data: AsyncListDiffer<FavoriteModel> =
         AsyncListDiffer(this, MyDiffUtilCallback())
-
-    private var lastPosition = -1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesHolder {
         return FavoritesHolder(
@@ -42,20 +37,20 @@ class FavoritesAdapter(private val onItemClicked: (item: FavoriteItem) -> Unit) 
 
     override fun getItemCount() = data.currentList.size
 
-    fun updateData(newData: ArrayList<FavoriteItem>) {
+    fun updateData(newData: ArrayList<FavoriteModel>) {
         data.submitList(newData)
     }
 
-    class FavoritesHolder(itemView: View, private val onItemClicked: (item: FavoriteItem) -> Unit) :
+    class FavoritesHolder(itemView: View, private val onItemClicked: (item: FavoriteModel) -> Unit) :
         RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
-        private lateinit var item: FavoriteItem
+        private lateinit var item: FavoriteModel
 
-        private val favoriteBackground = itemView.findViewById<ImageView>(R.id.favorite_background)
-        private val btnFavoriteAdd: LottieAnimationView =
-            itemView.findViewById(R.id.favorite_btn_add)
-        private val favoriteTitle = itemView.findViewById<TextView>(R.id.favorite_text_title)
-        private val favoriteSeparator = itemView.findViewById<View>(R.id.favorite_separator)
+        private val itemBackground = itemView.findViewById<ImageView>(R.id.favorite_item_background)
+        private val itemBtnAdd: LottieAnimationView =
+            itemView.findViewById(R.id.favorite_item_btn_add)
+        private val itemTitle = itemView.findViewById<TextView>(R.id.favorite_item_text_title)
+        private val itemSeparator = itemView.findViewById<View>(R.id.favorite_item_separator)
 
         init {
             itemView.setOnClickListener(this)
@@ -68,46 +63,46 @@ class FavoritesAdapter(private val onItemClicked: (item: FavoriteItem) -> Unit) 
             item.updateItemIsChecked()
         }
 
-        fun bind(bindItem: FavoriteItem) {
+        fun bind(bindItem: FavoriteModel) {
             item = bindItem
-            favoriteTitle.text = item.itemText
+            itemTitle.text = item.itemText
 
             item.setItemIsChecked()
         }
 
-        private fun FavoriteItem.setItemIsChecked() {
+        private fun FavoriteModel.setItemIsChecked() {
             if (this.itemIsChecked) {
-                btnFavoriteAdd.progress = 0.5f
-                favoriteBackground.setBackgroundColorFilter(App.Colors.get(R.color.color_btn_favorite_secondary))
-                favoriteSeparator.visibility = View.INVISIBLE
+                itemBtnAdd.progress = 0.5f
+                itemBackground.setBackgroundColorFilter(App.Colors.get(R.color.color_btn_favorite_secondary))
+                itemSeparator.visibility = View.INVISIBLE
             } else {
-                btnFavoriteAdd.progress = 0f
-                favoriteBackground.setBackgroundColorFilter(App.Colors.get(R.color.color_btn_favorite_primary))
-                favoriteSeparator.visibility = View.VISIBLE
+                itemBtnAdd.progress = 0f
+                itemBackground.setBackgroundColorFilter(App.Colors.get(R.color.color_btn_favorite_primary))
+                itemSeparator.visibility = View.VISIBLE
             }
         }
 
-        private fun FavoriteItem.updateItemIsChecked() {
+        private fun FavoriteModel.updateItemIsChecked() {
             if (this.itemIsChecked) {
-                btnFavoriteAdd.progress = 0f
-                btnFavoriteAdd.setMinAndMaxProgress(0f, 0.5f)
-                btnFavoriteAdd.speed = 1.5f
-                btnFavoriteAdd.playAnimation()
-                favoriteBackground.updateBackgroundColorFilter(
+                itemBtnAdd.progress = 0f
+                itemBtnAdd.setMinAndMaxProgress(0f, 0.5f)
+                itemBtnAdd.speed = 1.5f
+                itemBtnAdd.playAnimation()
+                itemBackground.updateBackgroundColorFilter(
                     App.Colors.get(R.color.color_btn_favorite_primary),
                     App.Colors.get(R.color.color_btn_favorite_secondary)
                 )
-                favoriteSeparator.visibility = View.INVISIBLE
+                itemSeparator.visibility = View.INVISIBLE
             } else {
-                btnFavoriteAdd.progress = 0.5f
-                btnFavoriteAdd.setMinAndMaxProgress(0.5f, 1f)
-                btnFavoriteAdd.speed = 1.5f
-                btnFavoriteAdd.playAnimation()
-                favoriteBackground.updateBackgroundColorFilter(
+                itemBtnAdd.progress = 0.5f
+                itemBtnAdd.setMinAndMaxProgress(0.5f, 1f)
+                itemBtnAdd.speed = 1.5f
+                itemBtnAdd.playAnimation()
+                itemBackground.updateBackgroundColorFilter(
                     App.Colors.get(R.color.color_btn_favorite_secondary),
                     App.Colors.get(R.color.color_btn_favorite_primary)
                 )
-                favoriteSeparator.visibility = View.VISIBLE
+                itemSeparator.visibility = View.VISIBLE
             }
         }
 

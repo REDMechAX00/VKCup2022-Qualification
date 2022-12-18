@@ -16,6 +16,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        startFragment(this, FavoritesFragment(), false)
+        startFragment(this, FavoritesFragment(), null, false)
     }
 }

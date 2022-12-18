@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">VKCups Stage One</string>
+    <string name="app_name">VKCups Qualification</string>
     <string name="text_label">Отметьте то, что вам интересно, чтобы настроить Дзен</string>
 
     <!--Buttons-->
@@ -30,8 +30,8 @@
     <string name="category_celebrities">Знаменитости</string>
     <string name="category_music">Музыка</string>
     <string name="category_paintings">Картины</string>
-    <string name="category_dance">Dance</string>
-    <string name="category_skateboarding">Skateboarding</string>
-    <string name="category_swimming">Swimming</string>
-    <string name="category_running">Running</string>
+    <string name="category_dance">Танцы</string>
+    <string name="category_skateboarding">Скейтбординг</string>
+    <string name="category_swimming">Плавание</string>
+    <string name="category_running">Бег</string>
 </resources>
