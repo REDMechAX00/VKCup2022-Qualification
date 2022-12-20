@@ -4,7 +4,7 @@
 * The Zen mobile app shows users a feed of the most interesting posts.
 * For first-time users logging into the app, we show a selection of many categories that they might like
 
-### Screen template: [Figma](https://vk.cc/cjh0Ho)
+### Screen template: Figma Screenshots
 ![Template](app_overview_images/Template.jpg)
 
 ### Screens of my App:
